@@ -6,6 +6,12 @@ public class Album {
     String artista;
     ArrayList<Cancion> canciones;
 
+    public Album(String nombre, String artista) {
+        this.nombre = nombre;
+        this.artista = artista;
+        this.canciones = new ArrayList<>();
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -38,7 +44,7 @@ public class Album {
     }
     public boolean addToPlayList(String titulo,LinkedList<Cancion> playlist){
         Cancion cancion = findSong(titulo);
-        if (cancion == null){
+        if (cancion != null){
             playlist.add(cancion);
             return true;
         }
